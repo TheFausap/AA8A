@@ -1,0 +1,13 @@
+ z←p PARSE l
+ :If p=⍴l
+     z←'DONE PARSING'
+ :ElseIf '#'=⊃↑l[p]
+     VARS↑l[p]
+     z←(p+1)PARSE l
+ :ElseIf ':'=⊃↑l[p]
+     LABEL↑l[p]
+     z←(p+1)PARSE l
+ :Else
+     OPC↑l[p]
+     z←(p+1)PARSE l
+ :End

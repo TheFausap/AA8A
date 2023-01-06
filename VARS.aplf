@@ -1,0 +1,3 @@
+ VARS l;op
+ op←'#(\w+)\s(\d+)([DS])'⎕S'\1 \2 \3'⊣l
+ CONSTS←CONSTS,op

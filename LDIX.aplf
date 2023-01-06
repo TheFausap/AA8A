@@ -1,0 +1,5 @@
+ LDIX l;addr;val
+ FCH
+ addr←BUS
+ NXT ⋄ FCH
+ MEM[addr]←⊂BUS

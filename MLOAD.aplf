@@ -1,0 +1,10 @@
+ MLOAD p;org
+ org←2⊥⊃PROG[1]
+ PC←org
+ ⎕←org
+ :Repeat
+     MEM[org;]←⊃PROG[p]
+     p+←1
+     org+←1
+ :Until p=⍴PROG
+ ⎕←'PROGRAM LOADED'

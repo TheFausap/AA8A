@@ -1,0 +1,43 @@
+ ADD←{ ⍝ 8bit addition
+     s1←⍺≠⍵
+     c1←⍺∧⍵
+     OVFV[0]←⊃c1
+     c1←SHL c1
+     s2←s1+c1
+     c2←s2≥2
+     OVFV[1]←⊃c2
+     c2←SHL c2
+     s2←(s2<2)×s2
+     s3←s2+c2
+     c3←s3≥2
+     OVFV[2]←⊃c3
+     c3←SHL c3
+     s3←(s3<2)×s3
+     s4←s3+c3
+     c4←s4≥2
+     OVFV[3]←⊃c4
+     c4←SHL c4
+     s4←(s4<2)×s4
+     s5←s4+c4
+     c5←s5≥2
+     OVFV[4]←⊃c5
+     c5←SHL c5
+     s5←(s5<2)×s5
+     s6←s5+c5
+     c6←s6≥2
+     OVFV[5]←⊃c6
+     c6←SHL c6
+     s6←(s6<2)×s6
+     s7←s6+c6
+     c7←s7≥2
+     OVFV[6]←⊃c7
+     c7←SHL c7
+     s7←(s7<2)×s7
+     s8←s7+c7
+     c8←s8≥2
+     OVFV[7]←⊃c8
+     ⍝ no need for SHL
+     s8←(s8<2)×s8
+     OVF←~⍬≡⍸OVFV
+     s8
+ }

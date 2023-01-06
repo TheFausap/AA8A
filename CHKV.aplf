@@ -1,0 +1,11 @@
+ z←CHKV v;x;op;fl
+ x←⊃CONSTS[⍸⊃¨v=CONSTS]
+ fl←''
+ op←0
+ op←⊃'\w+\s(\d+)\s([DS])'⎕S'\1'⊣x
+ fl←⊃'\w+\s(\d+)\s([DS])'⎕S'\2'⊣x
+ :If fl='D'
+     z←(16⍴2)⊤⍎op
+ :Else
+     z←(8⍴2)⊤⍎op
+ :End
