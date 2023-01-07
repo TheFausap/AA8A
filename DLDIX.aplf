@@ -1,5 +1,7 @@
- LDIX;addr
+ DLDIX;addr
  NXT ⋄ FCH
  addr←BUS
  NXT ⋄ FCH
  MEM[(2⊥addr);]←BUS
+ NXT ⋄ FCH
+ MEM[1+(2⊥addr);]←BUS

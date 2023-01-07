@@ -1,0 +1,4 @@
+ C216
+ ⍝ 16-bit 2 complement of the Accumulators
+ ACL←C2 ACL
+ ACH←CRY16 ADD ~ACH

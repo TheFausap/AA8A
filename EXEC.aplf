@@ -1,0 +1,18 @@
+ EXEC;op
+ FCH
+ op←BUS
+ :If op≡(0 0 0 0 0 0 0 1)
+     LDIX
+     NXT
+ :ElseIf op≡(0 0 0 0 0 0 1 0)
+     DLDIX
+     NXT
+ :ElseIf op≡(0 0 0 0 1 0 0 0)
+     MVAL
+     NXT
+ :ElseIf op≡(0 0 0 0 1 0 0 1)
+     MVAH
+     NXT
+ :Else
+     HLT
+ :End

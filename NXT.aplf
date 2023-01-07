@@ -1,0 +1,6 @@
+ NXT;pl;ph
+ pl←PC[8+⍳8]
+ pl←(0 0 0 0 0 0 0 1)ADD pl
+ ph←PC[⍳8]
+ ph←CRY16 ADD ph
+ PC←ph,pl

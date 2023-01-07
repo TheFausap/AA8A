@@ -1,0 +1,9 @@
+ RUN f;LL
+ RESET
+ LL←LOAD f
+ 0 PARSE LL
+ MLOAD 3
+ :While ∆HLT=0
+    EXEC
+ :End
+ ⎕←'EXEC COMPLETE'

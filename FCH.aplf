@@ -1,0 +1,4 @@
+ FCH
+ MAR←PC
+ ⎕←2⊥MAR
+ BUS←MEM[(2⊥MAR);]

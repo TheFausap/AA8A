@@ -1,6 +1,7 @@
  MLOAD p;org
- org←2⊥⊃PROG[1]
+ org←,↑PROG[1 2]
  PC←org
+ org←2⊥org
  ⎕←org
  :Repeat
      MEM[org;]←⊃PROG[p]

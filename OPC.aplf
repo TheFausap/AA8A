@@ -2,10 +2,15 @@
  op←''
  op←↑'^([\w:])[+-]*'⎕S'\1'⊣l
  :If op='L'
-     PROG←PROG,⊂(0 0 0 0 0 0 0 1)
-     op←⊃'\w\s(\d+),(\w+)'⎕S'\1'⊣l
+     op←↑'(\w)([+-])'⎕S'\2'⊣l
+     :If op='-'
+         PROG←PROG,⊂(0 0 0 0 0 0 0 1)
+     :Else
+         PROG←PROG,⊂(0 0 0 0 0 0 1 0)
+     :End
+     op←⊃'\w[+-]\s(\d+),(\w+)'⎕S'\1'⊣l
      PROG←PROG,⊂(8⍴2)⊤⍎op
-     op←⊃'\w\s(\d+),(\w+)'⎕S'\2'⊣l
+     op←⊃'\w[+-]\s(\d+),(\w+)'⎕S'\2'⊣l
      op←CHKV op
      :If 16=⍴op
          PROG←PROG,⊂op[⍳8]
@@ -31,8 +36,9 @@
      PROG←PROG,⊂(1 1 1 1 1 1 1 1)
  :ElseIf op='O'
      op←⊃'\w\s(\d+)'⎕S'\1'⊣l
-     op←(8⍴2)⊤⍎op
-     PROG←PROG,⊂op
+     op←(16⍴2)⊤⍎op
+     PROG←PROG,⊂op[⍳8]
+     PROG←PROG,⊂op[8+⍳8]
  :ElseIf op='A'
     ⍝ ADD or EADD
      op←↑'(\w)([+-])'⎕S'\2'⊣l

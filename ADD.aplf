@@ -36,7 +36,8 @@
      s8←s7+c7
      c8←s8≥2
      OVFV[7]←⊃c8
-     ⍝ no need for SHL
+     ⍝ used to link for a 16-bit ADD
+     CRY16←SHL c8
      s8←(s8<2)×s8
      OVF←~⍬≡⍸OVFV
      s8

@@ -1,3 +1,3 @@
- C2←{
+ C2←{ ⍝ 8-bit 2 complement
      (0 0 0 0 0 0 0 1)ADD~⍵
  }
