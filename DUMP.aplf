@@ -1,8 +1,10 @@
  DUMP
- ⎕←'MEMORY INFORMATION' ⋄ ⎕←''
+ ⎕←'MEMORY INFORMATION'
+ ⎕←'------------------' ⋄ ⎕←''
  ⍞←'PC ' ⋄ ⍞←PC ⋄ ⍞←' (' ⋄ ⍞←(2⊥PC) ⋄ ⍞←')'
  ⎕←''
- ⎕←'REGISTERS STATUS' ⋄ ⎕←''
+ ⎕←'REGISTERS STATUS'
+ ⎕←'----------------' ⋄ ⎕←''
  ⍞←'ACH ' ⋄ ⍞←ACH ⋄ ⍞←' (' ⋄ ⍞←(2⊥ACH) ⋄ ⍞←')'
  ⎕←''
  ⍞←'ACL ' ⋄ ⍞←ACL ⋄ ⍞←' (' ⋄ ⍞←(2⊥ACL) ⋄ ⍞←')'
