@@ -1,0 +1,10 @@
+ SUB;addr;val
+ ⍝ ACL←C(MEM)-ACL
+ NXT ⋄ FCH
+ addr←BUS
+ val←MEM[(2⊥addr);]
+ ACL←C2 ACL
+ ACL←val ADD ACL
+ :If OVF=0
+     ACL←C2 ACL
+ :End

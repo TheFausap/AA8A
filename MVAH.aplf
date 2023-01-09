@@ -1,0 +1,4 @@
+ MVAH;addr
+ NXT ⋄ FCH
+ addr←BUS
+ ACH←MEM[(2⊥addr);]

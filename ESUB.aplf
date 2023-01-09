@@ -1,0 +1,15 @@
+ ESUB;addr;val
+ ⍝ 16-bit version : ACL←C(MEM)-ACL
+ NXT ⋄ FCH
+ addr←BUS
+ val←MEM[(2⊥addr);]
+ C216
+ ACL←val ADD ACL
+ NXT ⋄ FCH
+ addr←BUS
+ val←MEM[(2⊥addr);]
+ ACH←CRY16 ADD ACH
+ ACH←val ADD ACH
+ :If OVF=0
+     C216
+ :End

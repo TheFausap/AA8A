@@ -13,8 +13,8 @@
      op←⊃'\w[+-]\s(\d+),(\w+)'⎕S'\2'⊣l
      op←CHKV op
      :If 16=⍴op
-         PROG←PROG,⊂op[⍳8]
          PROG←PROG,⊂op[8+⍳8]
+         PROG←PROG,⊂op[⍳8]
      :Else
          PROG←PROG,⊂op
      :End
@@ -48,6 +48,18 @@
          PROG←PROG,⊂(8⍴2)⊤⍎op
      :Else
          PROG←PROG,⊂(0 0 0 0 1 0 1 1)
+         op←⊃'\w[+-]\s(\w+)'⎕S'\1'⊣l
+         PROG←PROG,⊂(8⍴2)⊤⍎op
+     :End
+:ElseIf op='S'
+    ⍝ SUB or ESUB
+     op←↑'(\w)([+-])'⎕S'\2'⊣l
+     :If op='-'
+         PROG←PROG,⊂(0 0 0 0 0 1 0 1)
+         op←⊃'\w[+-]\s(\w+)'⎕S'\1'⊣l
+         PROG←PROG,⊂(8⍴2)⊤⍎op
+     :Else
+         PROG←PROG,⊂(0 0 0 0 1 1 0 0)
          op←⊃'\w[+-]\s(\w+)'⎕S'\1'⊣l
          PROG←PROG,⊂(8⍴2)⊤⍎op
      :End

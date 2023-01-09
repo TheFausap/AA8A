@@ -13,6 +13,16 @@
  :ElseIf op≡(0 0 0 0 1 0 0 1)
      MVAH
      NXT
+ :ElseIf op≡(0 0 0 0 1 0 1 1)
+     EADD
+     NXT
+ :ElseIf op≡(0 0 0 0 0 1 0 0)
+     NXT ⋄ FCH
+     ACL←MEM[(2⊥BUS);]ADD ACL
+     NXT
+ :ElseIf op≡(0 0 0 0 0 1 0 1)
+     SUB
+     NXT
  :Else
      HLT
  :End
